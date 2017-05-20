@@ -24,12 +24,24 @@
                 var gait = Move[2];
                 var next = Move[3];
                 //将所要移动的棋子的名称改为英文
-                for(x=0;x<19;x++){
+                for(x=0;x<12;x++){
                     if(chess == chineseChess[x]){
                         chess = englishChess[x];
                         break;
                     }
                 }
+                var red_id_1 = "red_"+chess+"_1";
+                var red_id_2 = "red_"+chess+"_2";
+                var red_id_4 = "red_"+chess+"_4";
+                var red_id_5 = "red_"+chess+"_5";
+                var red_id_6 = "red_"+chess+"_6";
+                var red_id_3 = "red_"+chess;
+                var black_id_1 = "black_"+chess+"_1";
+                var black_id_2 = "black_"+chess+"_2";
+                var black_id_4 = "black_"+chess+"_4";
+                var black_id_5 = "black_"+chess+"_5";
+                var black_id_6 = "black_"+chess+"_6";
+                var black_id_3 = "black_"+chess;
                 //如果输入的步法是中文，则将步数转换为数字
                 if(isNaN(pre)){
                     for(i=0;i<9;i++){
@@ -47,15 +59,6 @@
                         }
                     }
                 }
-//                var red_id = ("red_"+chess+"_1");
-//                preword = "a1";
-//                window.alert(red_id);
-//                $("#"+red_id).removeClass("h2");
-//                preword = "b1";
-//                $("#"+red_id).addClass(preword);
-//                var red_id = $("a1").attr(id);
-//                window.alert(red_id);
-
                 //当为红方下子时
                 if(roundClass =="round_red"){
                     for(i=0;i<9;i++){
@@ -68,14 +71,50 @@
                         for(i=1;i<11;i++){
                             preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
                             var red_id = $("."+preword).attr("id");
-                            var red_id_1 = "red_"+chess+"_2";
                             if(red_id == red_id_1){
-                                $("#"+red_id).removeClass(preword);
-                                next = Number(pre) - Number(next);
-                                window.alert(next);
-                                nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
-                                window.alert(nextword);
-                                $("#" + red_id).addClass(nextword);
+                                red_gomove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_2){
+                                red_gomove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_3){
+                                red_gomove(red_id,i);
+                                break;
+                            }
+                        }
+                    }else if(gait == "平"){
+                        for(x=0;x<9;x++){
+                            if(next == englishNum[x]){
+                                next = english_Num[x];
+                                break;
+                            }
+                        }
+                        for(i=1;i<11;i++){
+                            preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
+                            var red_id = $("."+preword).attr("id");
+                            if(red_id == red_id_1){
+                                red_move(red_id,i);
+                                break;
+                            }else if(red_id == red_id_2){
+                                red_move(red_id,i);
+                                break;
+                            }else if(red_id == red_id_3){
+                                red_move(red_id,i);
+                                break;
+                            }
+                        }
+                    }else if(gait == "退"){
+                        for(i=1;i<11;i++){
+                            preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
+                            var red_id = $("."+preword).attr("id");
+                            if(red_id == red_id_1){
+                                red_backmove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_2){
+                                red_backmove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_3){
+                                red_backmove(red_id,i);
                                 break;
                             }
                         }
@@ -83,9 +122,95 @@
                     $("#round").removeClass("round_red");
                     $("#round").addClass("round_black");
                 }
-                else{
+                else if(roundClass =="round_black"){//黑棋回合
+                    if(gait == "进"){
+                        for(i=1;i<11;i++){
+                            preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
+                            var black_id = $("."+preword).attr("id");
+                            if(black_id == black_id_1){
+                                black_gomove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_2){
+                                black_gomove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_3){
+                                black_gomove(black_id,i);
+                                break;
+                            }
+                        }
+                    }else if(gait == "平"){
+                        for(i=1;i<11;i++){
+                            preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
+                            var black_id = $("."+preword).attr("id");
+                            if(black_id == black_id_1){
+                                black_move(black_id,i);
+                                break;
+                            }else if(black_id == black_id_2){
+                                black_move(black_id,i);
+                                break;
+                            }else if(black_id == black_id_3){
+                                black_move(black_id,i);
+                                break;
+                            }
+                        }
+                    }else if(gait == "退"){
+                        for(i=1;i<11;i++){
+                            preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
+                            var black_id = $("."+preword).attr("id");
+                            if(black_id == black_id_1){
+                                black_backmove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_2){
+                                black_backmove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_3){
+                                black_backmove(black_id,i);
+                                break;
+                            }
+                        }
+                    }
                     $("#round").removeClass("round_black");
                     $("#round").addClass("round_red");
+                }
+                //设置红旗前进的函数
+                function red_gomove(red_id,i) {
+                    $("#"+red_id).removeClass(preword);
+                    next = i - Number(next);
+                    nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    $("#" + red_id).addClass(nextword);
+                };
+                //设置黑棋前进的函数
+                function black_gomove(black_id,i) {
+                    $("#"+black_id).removeClass(preword);
+                    next = i + Number(next);
+                    nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    $("#" + black_id).addClass(nextword);
+                };
+                //设置红旗平移的函数
+                function red_move(red_id,i) {
+                    $("#"+red_id).removeClass(preword);
+                    nextword = String.fromCharCode(64+parseInt(i)).toLowerCase()+next;
+                    $("#" + red_id).addClass(nextword);
+                };
+                //设置黑旗平移的函数
+                function black_move(black_id,i) {
+                    $("#"+black_id).removeClass(preword);
+                    nextword = String.fromCharCode(64+parseInt(i)).toLowerCase()+next;
+                    $("#" + black_id).addClass(nextword);
+                };
+                //设置红旗回退的函数
+                function red_backmove(red_id,i) {
+                    $("#"+red_id).removeClass(preword);
+                    next = i + Number(next);
+                    nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    $("#" + red_id).addClass(nextword);
+                }
+                //设置黑旗回退的函数
+                function black_backmove(black_id,i) {
+                    $("#"+black_id).removeClass(preword);
+                    next = i - Number(next);
+                    nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    $("#" + black_id).addClass(nextword);
                 }
             });
         });
@@ -194,7 +319,7 @@
         <!--<div class="coordinate j8"></div>-->
         <!--<div class="coordinate j9"></div>-->
     <!--</div>-->
-    <div>
+    <div class="chess">
         <div class="black a1" id="black_machine_1">車</div>
         <div class="black a2" id="black_horse_1">马</div>
         <div class="black a3" id="black_elephant_1">象</div>
@@ -230,14 +355,15 @@
         <div class="red g9" id="red_people_5">兵</div>
     </div>
     <img src="chess.jpg" class="chessboard_img">
-    <div class="input_move">
-        <h1>中国象棋<span class="express">(红棋先走)</span></h1>
-        <h3 class="round_red" id="round">红棋回合</h3>
-        <div>
-            请在这里输入步法:<input type="text" id="move">
-            <button id="submit">提交</button>
-        </div>
+</div>
+<div class="input_move">
+    <h1>中国象棋<span class="express">(红棋先走)</span></h1>
+    <h3 class="round_red" id="round">红棋回合</h3>
+    <div>
+        请在这里输入步法:<input type="text" id="move">
+        <button id="submit">提交</button>
     </div>
+    <h6>完成棋子的前进，平移，后退</h6>
 </div>
 </body>
 </html>

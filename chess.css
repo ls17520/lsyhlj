@@ -2,13 +2,16 @@
 }
 
 .chessboard{
-    margin-left: 20%;
+    margin: 0 0 0 15%;
+    height: 80%;
+    width: 45%;
+    float: left;
 }
 
 .chessboard_img{
-    height: 580px;
-    width: 45%;
-    z-index: 6;
+    height: 91%;
+    width: 81%;
+    z-index: 4;
 }
 
 .chess{
@@ -16,7 +19,7 @@
 }
 
 .coordinate{
-    display: none;
+    /*display: none;*/
     position: absolute;
     padding:5px;
     width: 30px;
@@ -63,462 +66,460 @@
 }
 
 .a1{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 0%;
 }
 
 .a2{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 3.8%;
 }
 
 .a3{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 8%;
 }
 
 .a4{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 12%;
 }
 
 .a5{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 16.2%;
 }
 
 .a6{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 20.5%;
 }
 
 .a7{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 24.5%;
 }
 
 .a8{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 28.6%;
 }
 
 .a9{
-    margin-top: 0.7%;
+    margin-top: 0.5%;
     margin-left: 33%;
 }
 
 .b1{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 0%;
 }
 
 .b2{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 3.8%;
 }
 
 .b3{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 8%;
 }
 
 .b4{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 12%;
 }
 
 .b5{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 16.2%;
 }
 
 .b6{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 20.5%;
 }
 
 .b7{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 24.5%;
 }
 
 .b8{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 28.6%;
 }
 
 .b9{
-    margin-top: 5%;
+    margin-top: 4.6%;
     margin-left: 33%;
 }
 
 .c1{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 0%;
 }
 
 .c2{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 3.8%;
 }
 
 .c3{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 8%;
 }
 
 .c4{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 12%;
 }
 
 .c5{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 16.2%;
 }
 
 .c6{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 20.5%;
 }
 
 .c7{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 24.5%;
 }
 
 .c8{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 28.6%;
 }
 
 .c9{
-    margin-top: 9.1%;
+    margin-top: 9%;
     margin-left: 33%;
 }
 
 .d1{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 0%;
 }
 
 .d2{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 3.8%;
 }
 
 .d3{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 8%;
 }
 
 .d4{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 12%;
 }
 
 .d5{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 16.2%;
 }
 
 .d6{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 20.5%;
 }
 
 .d7{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 24.5%;
 }
 
 .d8{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 28.6%;
 }
 
 .d9{
-    margin-top: 13.5%;
+    margin-top: 13%;
     margin-left: 33%;
 }
 
 .e1{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 0%;
 }
 
 .e2{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 3.8%;
 }
 
 .e3{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 8%;
 }
 
 .e4{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 12%;
 }
 
 .e5{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 16.2%;
 }
 
 .e6{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 20.5%;
 }
 
 .e7{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 24.5%;
 }
 
 .e8{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 28.6%;
 }
 
 .e9{
-    margin-top: 17.7%;
+    margin-top: 17%;
     margin-left: 33%;
 }
 
 .f1{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 0%;
 }
 
 .f2{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 3.8%;
 }
 
 .f3{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 8%;
 }
 
 .f4{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 12%;
 }
 
 .f5{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 16.2%;
 }
 
 .f6{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 20.5%;
 }
 
 .f7{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 24.5%;
 }
 
 .f8{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 28.6%;
 }
 
 .f9{
-    margin-top: 21.8%;
+    margin-top: 21%;
     margin-left: 33%;
 }
 
 .g1{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 0%;
 }
 
 .g2{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 3.8%;
 }
 
 .g3{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 8%;
 }
 
 .g4{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 12%;
 }
 
 .g5{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 16.2%;
 }
 
 .g6{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 20.5%;
 }
 
 .g7{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 24.5%;
 }
 
 .g8{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 28.6%;
 }
 
 .g9{
-    margin-top: 26%;
+    margin-top: 25%;
     margin-left: 33%;
 }
 
 .h1{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 0%;
 }
 
 .h2{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 3.8%;
 }
 
 .h3{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 8%;
 }
 
 .h4{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 12%;
 }
 
 .h5{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 16.2%;
 }
 
 .h6{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 20.5%;
 }
 
 .h7{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 24.5%;
 }
 
 .h8{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 28.6%;
 }
 
 .h9{
-    margin-top: 30.2%;
+    margin-top: 29.3%;
     margin-left: 33%;
 }
 
 .i1{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 0%;
 }
 
 .i2{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 3.8%;
 }
 
 .i3{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 8%;
 }
 
 .i4{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 12%;
 }
 
 .i5{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 16.2%;
 }
 
 .i6{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 20.5%;
 }
 
 .i7{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 24.5%;
 }
 
 .i8{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 28.6%;
 }
 
 .i9{
-    margin-top: 34.3%;
+    margin-top: 33.3%;
     margin-left: 33%;
 }
 
 .j1{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 0%;
 }
 
 .j2{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 3.8%;
 }
 
 .j3{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 8%;
 }
 
 .j4{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 12%;
 }
 
 .j5{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 16.2%;
 }
 
 .j6{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 20.5%;
 }
 
 .j7{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 24.5%;
 }
 
 .j8{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 28.6%;
 }
 
 .j9{
-    margin-top: 38.5%;
+    margin-top: 37.5%;
     margin-left: 33%;
 }
 
 .input_move{
-    position: relative;
+    float: left;
+    width: 40%;
+    margin-top: 20%;
     height: auto;
-    width: 35%;
-    margin-right: 150px;
-    margin-top: 30%;
-    float: right;
 }
 
 .express{
