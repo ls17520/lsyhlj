@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中国象棋</title>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+    <link type="text/css" href="chess.css" media="screen" rel="stylesheet">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var roundClass = $("#round").prop("className");//获取此回合的一方
+                var chessMove = $("#move").val();//获取步法
+                var Move = new Array();
+                Move = chessMove.split("");//分割步法，如車九
+                var chineseNum = ["一","二","三","四","五","六","七","八","九"];
+                var englishNum = ["1","2","3","4","5","6","7","8","9"];
+                var english_Num = ["9","8","7","6","5","4","3","2","1"];
+                var chineseChess = ["车","車","马","相","象","士","仕","将","帅","炮","兵","卒"];
+                var englishChess = ["machine","machine","horse","elephant","elephant","scholar","scholar","general","general","cannon","people","people"];
+                var preword;
+                var nextword;
+                var chess = Move[0];
+                var pre = Move[1];
+                var gait = Move[2];
+                var next = Move[3];
+                //将所要移动的棋子的名称改为英文
+                for(x=0;x<19;x++){
+                    if(chess == chineseChess[x]){
+                        chess = englishChess[x];
+                        break;
+                    }
+                }
+                //如果输入的步法是中文，则将步数转换为数字
+                if(isNaN(pre)){
+                    for(i=0;i<9;i++){
+                        if(pre == chineseNum[i]){
+                            pre =englishNum[i];
+                            break;
+                        }
+                    }
+                }
+                if(isNaN(next)){
+                    for(i=0;i<9;i++){
+                        if(next == chineseNum[i]){
+                            next =englishNum[i];
+                            break;
+                        }
+                    }
+                }
+//                var red_id = ("red_"+chess+"_1");
+//                preword = "a1";
+//                window.alert(red_id);
+//                $("#"+red_id).removeClass("h2");
+//                preword = "b1";
+//                $("#"+red_id).addClass(preword);
+//                var red_id = $("a1").attr(id);
+//                window.alert(red_id);
+
+                //当为红方下子时
+                if(roundClass =="round_red"){
+                    for(i=0;i<9;i++){
+                        if(pre == englishNum[i]){
+                            pre =english_Num[i];
+                            break;
+                        }
+                    }
+                    if(gait == "进"){
+                        for(i=1;i<11;i++){
+                            preword = String.fromCharCode(64+parseInt(i)).toLowerCase()+pre;
+                            var red_id = $("."+preword).attr("id");
+                            var red_id_1 = "red_"+chess+"_2";
+                            if(red_id == red_id_1){
+                                $("#"+red_id).removeClass(preword);
+                                next = Number(pre) - Number(next);
+                                window.alert(next);
+                                nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                                window.alert(nextword);
+                                $("#" + red_id).addClass(nextword);
+                                break;
+                            }
+                        }
+                    }
+                    $("#round").removeClass("round_red");
+                    $("#round").addClass("round_black");
+                }
+                else{
+                    $("#round").removeClass("round_black");
+                    $("#round").addClass("round_red");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="chessboard">
+    <!--<div class="chess">-->
+        <!--<div class="coordinate a1"></div>-->
+        <!--<div class="coordinate a2"></div>-->
+        <!--<div class="coordinate a3"></div>-->
+        <!--<div class="coordinate a4"></div>-->
+        <!--<div class="coordinate a5"></div>-->
+        <!--<div class="coordinate a6"></div>-->
+        <!--<div class="coordinate a7"></div>-->
+        <!--<div class="coordinate a8"></div>-->
+        <!--<div class="coordinate a9"></div>-->
+
+        <!--<div class="coordinate b1"></div>-->
+        <!--<div class="coordinate b2"></div>-->
+        <!--<div class="coordinate b3"></div>-->
+        <!--<div class="coordinate b4"></div>-->
+        <!--<div class="coordinate b5"></div>-->
+        <!--<div class="coordinate b6"></div>-->
+        <!--<div class="coordinate b7"></div>-->
+        <!--<div class="coordinate b8"></div>-->
+        <!--<div class="coordinate b9"></div>-->
+
+        <!--<div class="coordinate c1"></div>-->
+        <!--<div class="coordinate c2"></div>-->
+        <!--<div class="coordinate c3"></div>-->
+        <!--<div class="coordinate c4"></div>-->
+        <!--<div class="coordinate c5"></div>-->
+        <!--<div class="coordinate c6"></div>-->
+        <!--<div class="coordinate c7"></div>-->
+        <!--<div class="coordinate c8"></div>-->
+        <!--<div class="coordinate c9"></div>-->
+
+        <!--<div class="coordinate d1"></div>-->
+        <!--<div class="coordinate d2"></div>-->
+        <!--<div class="coordinate d3"></div>-->
+        <!--<div class="coordinate d4"></div>-->
+        <!--<div class="coordinate d5"></div>-->
+        <!--<div class="coordinate d6"></div>-->
+        <!--<div class="coordinate d7"></div>-->
+        <!--<div class="coordinate d8"></div>-->
+        <!--<div class="coordinate d9"></div>-->
+
+        <!--<div class="coordinate e1"></div>-->
+        <!--<div class="coordinate e2"></div>-->
+        <!--<div class="coordinate e3"></div>-->
+        <!--<div class="coordinate e4"></div>-->
+        <!--<div class="coordinate e5"></div>-->
+        <!--<div class="coordinate e6"></div>-->
+        <!--<div class="coordinate e7"></div>-->
+        <!--<div class="coordinate e8"></div>-->
+        <!--<div class="coordinate e9"></div>-->
+
+        <!--<div class="coordinate f1"></div>-->
+        <!--<div class="coordinate f2"></div>-->
+        <!--<div class="coordinate f3"></div>-->
+        <!--<div class="coordinate f4"></div>-->
+        <!--<div class="coordinate f5"></div>-->
+        <!--<div class="coordinate f6"></div>-->
+        <!--<div class="coordinate f7"></div>-->
+        <!--<div class="coordinate f8"></div>-->
+        <!--<div class="coordinate f9"></div>-->
+
+        <!--<div class="coordinate g1"></div>-->
+        <!--<div class="coordinate g2"></div>-->
+        <!--<div class="coordinate g3"></div>-->
+        <!--<div class="coordinate g4"></div>-->
+        <!--<div class="coordinate g5"></div>-->
+        <!--<div class="coordinate g6"></div>-->
+        <!--<div class="coordinate g7"></div>-->
+        <!--<div class="coordinate g8"></div>-->
+        <!--<div class="coordinate g9"></div>-->
+
+        <!--<div class="coordinate h1"></div>-->
+        <!--<div class="coordinate h2"></div>-->
+        <!--<div class="coordinate h3"></div>-->
+        <!--<div class="coordinate h4"></div>-->
+        <!--<div class="coordinate h5"></div>-->
+        <!--<div class="coordinate h6"></div>-->
+        <!--<div class="coordinate h7"></div>-->
+        <!--<div class="coordinate h8"></div>-->
+        <!--<div class="coordinate h9"></div>-->
+
+        <!--<div class="coordinate i1"></div>-->
+        <!--<div class="coordinate i2"></div>-->
+        <!--<div class="coordinate i3"></div>-->
+        <!--<div class="coordinate i4"></div>-->
+        <!--<div class="coordinate i5"></div>-->
+        <!--<div class="coordinate i6"></div>-->
+        <!--<div class="coordinate i7"></div>-->
+        <!--<div class="coordinate i8"></div>-->
+        <!--<div class="coordinate i9"></div>-->
+
+        <!--<div class="coordinate j1"></div>-->
+        <!--<div class="coordinate j2"></div>-->
+        <!--<div class="coordinate j3"></div>-->
+        <!--<div class="coordinate j4"></div>-->
+        <!--<div class="coordinate j5"></div>-->
+        <!--<div class="coordinate j6"></div>-->
+        <!--<div class="coordinate j7"></div>-->
+        <!--<div class="coordinate j8"></div>-->
+        <!--<div class="coordinate j9"></div>-->
+    <!--</div>-->
+    <div>
+        <div class="black a1" id="black_machine_1">車</div>
+        <div class="black a2" id="black_horse_1">马</div>
+        <div class="black a3" id="black_elephant_1">象</div>
+        <div class="black a4" id="black_scholar_1">士</div>
+        <div class="black a5" id="black_general">将</div>
+        <div class="black a6" id="black_scholar_2">士</div>
+        <div class="black a7" id="black_elephant_2">象</div>
+        <div class="black a8" id="black_horse_2">马</div>
+        <div class="black a9" id="black_machine_2">車</div>
+        <div class="black c2" id="black_cannon_1">炮</div>
+        <div class="black c8" id="black_cannon_2">炮</div>
+        <div class="black d1" id="black_people_1">卒</div>
+        <div class="black d3" id="black_people_2">卒</div>
+        <div class="black d5" id="black_people_3">卒</div>
+        <div class="black d7" id="black_people_4">卒</div>
+        <div class="black d9" id="black_people_5">卒</div>
+
+        <div class="red j1" id="red_machine_1">车</div>
+        <div class="red j2" id="red_horse_1">马</div>
+        <div class="red j3" id="red_elephant_1">相</div>
+        <div class="red j4" id="red_scholar_1">仕</div>
+        <div class="red j5" id="red_general">帅</div>
+        <div class="red j6" id="red_scholar_2">仕</div>
+        <div class="red j7" id="red_elephant_2">相</div>
+        <div class="red j8" id="red_horse_2">马</div>
+        <div class="red j9" id="red_machine_2">车</div>
+        <div class="red h2" id="red_cannon_1">炮</div>
+        <div class="red h8" id="red_cannon_2">炮</div>
+        <div class="red g1" id="red_people_1">兵</div>
+        <div class="red g3" id="red_people_2">兵</div>
+        <div class="red g5" id="red_people_3">兵</div>
+        <div class="red g7" id="red_people_4">兵</div>
+        <div class="red g9" id="red_people_5">兵</div>
+    </div>
+    <img src="chess.jpg" class="chessboard_img">
+    <div class="input_move">
+        <h1>中国象棋<span class="express">(红棋先走)</span></h1>
+        <h3 class="round_red" id="round">红棋回合</h3>
+        <div>
+            请在这里输入步法:<input type="text" id="move">
+            <button id="submit">提交</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
