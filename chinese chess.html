@@ -32,15 +32,15 @@
                 }
                 var red_id_1 = "red_"+chess+"_1";
                 var red_id_2 = "red_"+chess+"_2";
-                var red_id_4 = "red_"+chess+"_4";
-                var red_id_5 = "red_"+chess+"_5";
-                var red_id_6 = "red_"+chess+"_6";
+                var red_id_4 = "red_"+chess+"_3";
+                var red_id_5 = "red_"+chess+"_4";
+                var red_id_6 = "red_"+chess+"_5";
                 var red_id_3 = "red_"+chess;
                 var black_id_1 = "black_"+chess+"_1";
                 var black_id_2 = "black_"+chess+"_2";
-                var black_id_4 = "black_"+chess+"_4";
-                var black_id_5 = "black_"+chess+"_5";
-                var black_id_6 = "black_"+chess+"_6";
+                var black_id_4 = "black_"+chess+"_3";
+                var black_id_5 = "black_"+chess+"_4";
+                var black_id_6 = "black_"+chess+"_5";
                 var black_id_3 = "black_"+chess;
                 //如果输入的步法是中文，则将步数转换为数字
                 if(isNaN(pre)){
@@ -81,6 +81,18 @@
                                 red_gomove(red_id,i);
                                 break;
                             }
+                            else if(red_id == red_id_4){
+                                red_gomove(red_id,i);
+                                break;
+                            }
+                            else if(red_id == red_id_5){
+                                red_gomove(red_id,i);
+                                break;
+                            }
+                            else if(red_id == red_id_6){
+                                red_gomove(red_id,i);
+                                break;
+                            }
                         }
                     }else if(gait == "平"){
                         for(x=0;x<9;x++){
@@ -101,6 +113,15 @@
                             }else if(red_id == red_id_3){
                                 red_move(red_id,i);
                                 break;
+                            }else if(red_id == red_id_4){
+                                red_move(red_id,i);
+                                break;
+                            }else if(red_id == red_id_5){
+                                red_move(red_id,i);
+                                break;
+                            }else if(red_id == red_id_6){
+                                red_move(red_id,i);
+                                break;
                             }
                         }
                     }else if(gait == "退"){
@@ -114,6 +135,15 @@
                                 red_backmove(red_id,i);
                                 break;
                             }else if(red_id == red_id_3){
+                                red_backmove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_4){
+                                red_backmove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_5){
+                                red_backmove(red_id,i);
+                                break;
+                            }else if(red_id == red_id_6){
                                 red_backmove(red_id,i);
                                 break;
                             }
@@ -136,6 +166,15 @@
                             }else if(black_id == black_id_3){
                                 black_gomove(black_id,i);
                                 break;
+                            }else if(black_id == black_id_4){
+                                black_gomove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_5){
+                                black_gomove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_6){
+                                black_gomove(black_id,i);
+                                break;
                             }
                         }
                     }else if(gait == "平"){
@@ -149,6 +188,15 @@
                                 black_move(black_id,i);
                                 break;
                             }else if(black_id == black_id_3){
+                                black_move(black_id,i);
+                                break;
+                            }else if(black_id == black_id_4){
+                                black_move(black_id,i);
+                                break;
+                            }else if(black_id == black_id_5){
+                                black_move(black_id,i);
+                                break;
+                            }else if(black_id == black_id_6){
                                 black_move(black_id,i);
                                 break;
                             }
@@ -166,6 +214,15 @@
                             }else if(black_id == black_id_3){
                                 black_backmove(black_id,i);
                                 break;
+                            }else if(black_id == black_id_4){
+                                black_backmove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_5){
+                                black_backmove(black_id,i);
+                                break;
+                            }else if(black_id == black_id_6){
+                                black_backmove(black_id,i);
+                                break;
                             }
                         }
                     }
@@ -177,6 +234,8 @@
                     $("#"+red_id).removeClass(preword);
                     next = i - Number(next);
                     nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    var dieId = $("."+nextword).attr("id");
+                    $("#"+dieId).css("display","none");
                     $("#" + red_id).addClass(nextword);
                 };
                 //设置黑棋前进的函数
@@ -184,18 +243,24 @@
                     $("#"+black_id).removeClass(preword);
                     next = i + Number(next);
                     nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    var dieId = $("."+nextword).attr("id");
+                    $("#"+dieId).css("display","none");
                     $("#" + black_id).addClass(nextword);
                 };
                 //设置红旗平移的函数
                 function red_move(red_id,i) {
                     $("#"+red_id).removeClass(preword);
                     nextword = String.fromCharCode(64+parseInt(i)).toLowerCase()+next;
+                    var dieId = $("."+nextword).attr("id");
+                    $("#"+dieId).css("display","none");
                     $("#" + red_id).addClass(nextword);
                 };
                 //设置黑旗平移的函数
                 function black_move(black_id,i) {
                     $("#"+black_id).removeClass(preword);
                     nextword = String.fromCharCode(64+parseInt(i)).toLowerCase()+next;
+                    var dieId = $("."+nextword).attr("id");
+                    $("#"+dieId).css("display","none");
                     $("#" + black_id).addClass(nextword);
                 };
                 //设置红旗回退的函数
@@ -203,6 +268,8 @@
                     $("#"+red_id).removeClass(preword);
                     next = i + Number(next);
                     nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    var dieId = $("."+nextword).attr("id");
+                    $("#"+dieId).css("display","none");
                     $("#" + red_id).addClass(nextword);
                 }
                 //设置黑旗回退的函数
@@ -210,6 +277,8 @@
                     $("#"+black_id).removeClass(preword);
                     next = i - Number(next);
                     nextword = String.fromCharCode(64+parseInt(next)).toLowerCase()+pre;
+                    var dieId = $("."+nextword).attr("id");
+                    $("#"+dieId).css("display","none");
                     $("#" + black_id).addClass(nextword);
                 }
             });
@@ -363,7 +432,7 @@
         请在这里输入步法:<input type="text" id="move">
         <button id="submit">提交</button>
     </div>
-    <h6>完成棋子的前进，平移，后退</h6>
+    <h6>请输入步法，如炮二进二</h6>
 </div>
 </body>
 </html>
